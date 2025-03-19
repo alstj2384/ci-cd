@@ -1,0 +1,22 @@
+services:
+  spring-server-1:
+    image: alstj2384/server
+    container_name: spring-server-1
+    restart: always
+    ports:
+      - "8080:8080"  # Spring Boot 컨테이너의 8080 포트를 호스트와 연결
+    networks:
+      - app-network
+
+  spring-server-2:
+    image: alstj2384/server2
+    container_name: spring-server-2
+    restart: always
+    ports:
+      - "8081:8080"  # Spring Boot 컨테이너의 8080 포트를 호스트와 연결
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
