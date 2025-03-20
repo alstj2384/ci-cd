@@ -12,6 +12,6 @@ RUN sed -i 's/\r$//' gradlew
 RUN chmod +x ./gradlew
 RUN ./gradlew clean build -x test --stacktrace
 
-RUN mv build/libs/nginx-test-0.0.1-SNAPSHOT.jar /app/app.jar
+RUN mv build/libs/server2-0.0.1-SNAPSHOT.jar /app/app.jar
 
 ENTRYPOINT ["java", "-jar", "app.jar"]
